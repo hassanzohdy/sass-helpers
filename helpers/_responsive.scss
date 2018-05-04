@@ -1,0 +1,9 @@
+@mixin responsive($breakpoints, $type: min) {
+    @each $breakpoint, $style in $breakpoints {
+        @media (#{$type}-width: #{$breakpoint}px) {
+           @each $key, $value in $style {
+               #{$key}: #{$value};
+           }
+        }
+    }
+}
